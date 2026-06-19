@@ -56,7 +56,6 @@
         <div class="deadline-box">
           <span>申込期間</span>
           <strong>2026年6月1日〜7月10日まで</strong>
-          <small id="deadlineStatus">トーナメント表は2026年7月12日以降に公開予定</small>
         </div>
 
         <div class="button-row">
@@ -103,7 +102,7 @@
               <span>会場</span>
               <strong>湯田温泉こんこんパーク</strong>
             </article>
-            <article class="info-card">
+            <article class="info-card info-card--one-line">
               <span>住所</span>
               <strong>山口市湯田温泉5丁目2番15号</strong>
             </article>
@@ -111,7 +110,7 @@
               <span>参加費</span>
               <strong>1,000円（大会参加料）</strong>
             </article>
-            <article class="info-card">
+            <article class="info-card info-card--one-line">
               <span>申込期間</span>
               <strong>2026年6月1日〜7月10日まで</strong>
             </article>
@@ -119,9 +118,9 @@
               <span>応募方法</span>
               <strong>トナメルより応募</strong>
             </article>
-            <article class="info-card">
+            <article class="info-card info-card--small">
               <span>受付</span>
-              <strong>先着順。定員に達し次第終了の場合あり</strong>
+              <strong>定員に達し次第終了</strong>
             </article>
           </div>
         </div>
@@ -145,7 +144,7 @@
             <span>申込期間</span>
             <strong>2026年6月1日〜7月10日まで</strong>
             <div class="button-stack">
-              <a class="button button--primary" href="https://tonamel.com/competition/xcvye" target="_blank" rel="noopener">
+              <a class="button button--primary button--entry-main" href="https://tonamel.com/competition/xcvye" target="_blank" rel="noopener">
                 トナメルで応募する
               </a>
               <a class="button button--dark" href="https://x.com/WhiteFox240801" target="_blank" rel="noopener">
@@ -153,9 +152,6 @@
               </a>
               <a class="button button--regulation" href="mailto:mequest.sachiaren@gmail.com">
                 お問い合わせ
-              </a>
-              <a class="button button--regulation" href="regulation_latest.pdf" target="_blank" rel="noopener">
-                大会レギュレーション
               </a>
             </div>
           </div>
@@ -196,12 +192,12 @@
                   <dd>ランク マスター未満</dd>
                 </div>
                 <div>
-                  <dt>補足</dt>
-                  <dd>ランクマッチ未プレイの方も参加可能</dd>
-                </div>
-                <div>
                   <dt>定員</dt>
                   <dd>最大32人</dd>
+                </div>
+                <div>
+                  <dt>補足</dt>
+                  <dd>ランクマッチ未プレイの方も参加可能</dd>
                 </div>
               </dl>
             </article>
@@ -212,7 +208,7 @@
             <ul class="check-list check-list--light">
               <li>応募時点のランクを基準に応募してください。</li>
               <li>過去に1キャラクターでもマスター到達済みの場合は、マスターズトーナメントへ応募してください。</li>
-              <li>チャレンジ応募後にマスターへ上がった場合は、WhiteFox公式XのDMでご相談ください。</li>
+              <li>チャレンジ応募後にマスターへ昇格した場合は、WhiteFox公式XのDMでご相談ください。</li>
               <li>虚偽申告が判明した場合は、出場不可となる可能性があります。</li>
             </ul>
           </div>
@@ -230,11 +226,17 @@
 
           <div class="bracket-grid">
             <article class="bracket-card">
+              <div class="bracket-placeholder" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </div>
               <span>Masters Tournament Bracket</span>
               <strong>2026年7月12日以降公開予定</strong>
               <p>公開後、こちらにマスターズトーナメント表を掲載します。</p>
             </article>
             <article class="bracket-card">
+              <div class="bracket-placeholder" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </div>
               <span>Challenge Tournament Bracket</span>
               <strong>2026年7月12日以降公開予定</strong>
               <p>公開後、こちらにチャレンジトーナメント表を掲載します。</p>
@@ -269,7 +271,7 @@
 
           <div class="split-content">
             <div>
-              <h3>BO5対象試合</h3>
+              <h3>BO5対象マッチ</h3>
               <ul class="check-list">
                 <li>ウィナーズファイナル</li>
                 <li>ルーザーズセミファイナル</li>
@@ -280,10 +282,23 @@
             </div>
             <div>
               <h3>進行について</h3>
-              <p>
-                TOP4以降は両トーナメントとも大型ビジョン前のステージ台で進行予定です。
-                参加人数や当日の状況により、形式・進行方法・終了時間を変更する場合があります。
-              </p>
+              <div class="progress-list">
+                <article>
+                  <strong>マスターズトーナメント</strong>
+                  <p>
+                    8つのブロックに分かれてダブルエリミネーションで代表を決定し、決勝トーナメントもダブルエリミネーションで対戦します。
+                    TOP4以降は大型ビジョン前のステージ台で進行予定です。
+                  </p>
+                </article>
+                <article>
+                  <strong>チャレンジトーナメント</strong>
+                  <p>
+                    4つのブロックに分かれてダブルエリミネーションで代表を決定し、決勝トーナメントもダブルエリミネーションで対戦します。
+                    TOP4以降は大型ビジョン前のステージ台で進行予定です。
+                  </p>
+                </article>
+              </div>
+              <p class="progress-note">参加人数や当日の状況により、形式・進行方法・終了時間を変更する場合があります。</p>
             </div>
           </div>
         </div>
@@ -294,33 +309,23 @@
           <p class="section-label">Time Table</p>
           <h2>タイムテーブル</h2>
 
-          <div class="table-wrap">
-            <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th>時間</th>
-                  <th>内容</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">9:00〜9:45</th>
-                  <td>受付</td>
-                </tr>
-                <tr>
-                  <th scope="row">9:45〜9:55</th>
-                  <td>開会説明・ルール説明</td>
-                </tr>
-                <tr>
-                  <th scope="row">10:00〜12:20</th>
-                  <td>大会進行 / TOP4決定まで / BO3</td>
-                </tr>
-                <tr>
-                  <th scope="row">12:30〜16:00</th>
-                  <td>TOP4以降 / BO5 / 両トーナメントともステージ台1台で進行予定</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="schedule-list">
+            <article class="schedule-item">
+              <time>9:00〜9:45</time>
+              <p>受付</p>
+            </article>
+            <article class="schedule-item">
+              <time>9:45〜9:55</time>
+              <p>開会説明・ルール説明</p>
+            </article>
+            <article class="schedule-item">
+              <time>10:00〜12:20</time>
+              <p>大会進行 / TOP4決定まで / BO3</p>
+            </article>
+            <article class="schedule-item">
+              <time>12:30〜16:00</time>
+              <p>TOP4以降 / BO5 / 両トーナメントともステージ台1台で進行予定</p>
+            </article>
           </div>
         </div>
       </section>
@@ -338,7 +343,6 @@
                   <li>使用ハード：PC</li>
                   <li>使用バージョン：大会当日時点で運営が指定するバージョン</li>
                   <li>コントローラー：マイアケコン・コントローラーを各自持参</li>
-                  <li>運営からの貸し出しはありません。</li>
                   <li>持ち込み機材の接続不良・動作不良は原則本人責任です。</li>
                   <li>ラウンド数：2ラウンド先取</li>
                   <li>ラウンドタイム：99カウント</li>
@@ -358,7 +362,7 @@
                   <li>マッチ開始後のキャラクター変更および操作タイプ変更はできません。</li>
                   <li>同一マッチ内では最初に選択したキャラクター・操作タイプで進行します。</li>
                   <li>次のマッチでは改めて選択できます。</li>
-                  <li>試合開始前にキャラクター、操作タイプ、ボタン設定を必ず確認してください。</li>
+                  <li>マッチ開始前にキャラクター、操作タイプ、ボタン設定を必ず確認してください。</li>
                   <li>マッチ開始後の設定ミスは原則そのまま続行し、結果は有効です。</li>
                   <li>ポーズ・中断時は状況によりラウンド敗北、ゲーム敗北、マッチ敗北の場合があります。</li>
                   <li>最終判断は運営が行います。</li>
@@ -474,18 +478,22 @@
             <a href="https://x.com/WhiteFox240801" target="_blank" rel="noopener">
               <span>X（WhiteFox）</span>
               <strong>https://x.com/WhiteFox240801</strong>
+              <small>大会情報・トーナメント表の公開はこちら</small>
             </a>
             <a href="mailto:mequest.sachiaren@gmail.com">
               <span>メール</span>
               <strong>mequest.sachiaren@gmail.com</strong>
+              <small>お問い合わせはこちら</small>
             </a>
             <a href="https://konkon-park.com/" target="_blank" rel="noopener">
               <span>施設HP</span>
               <strong>https://konkon-park.com/</strong>
+              <small>会場情報</small>
             </a>
             <a href="https://yamaguchi-esports.com/" target="_blank" rel="noopener">
               <span>一般社団法人やまぐちeスポーツ協会</span>
               <strong>https://yamaguchi-esports.com/</strong>
+              <small>主催団体</small>
             </a>
           </div>
         </div>

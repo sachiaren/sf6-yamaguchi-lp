@@ -7,24 +7,6 @@ if (posterImage) {
   });
 }
 
-// 申込締切までの日数を表示します。日付を変える場合はここを編集してください。
-const deadlineStatus = document.getElementById("deadlineStatus");
-const entryDeadline = new Date("2026-07-01T23:59:59+09:00");
-const today = new Date();
-
-if (deadlineStatus) {
-  const diff = entryDeadline.getTime() - today.getTime();
-  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-
-  if (daysLeft > 0) {
-    deadlineStatus.textContent = `申込締切まであと${daysLeft}日`;
-  } else if (daysLeft === 0) {
-    deadlineStatus.textContent = "申込締切は本日まで";
-  } else {
-    deadlineStatus.textContent = "申込期間は終了しました";
-  }
-}
-
 // ページ内リンクの移動を少しだけ滑らかにします。
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {

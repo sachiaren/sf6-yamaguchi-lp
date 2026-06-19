@@ -10,6 +10,7 @@
   --paper: #f6f7fb;
   --muted: #d8deef;
   --text: #172033;
+  --line: #dfe6f2;
   --shadow: 0 18px 48px rgba(2, 8, 23, 0.22);
   --radius: 8px;
 }
@@ -39,6 +40,40 @@ a {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+p,
+strong {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-bottom: 16px;
+  color: var(--white);
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 950;
+  text-shadow: 0 4px 0 rgba(255, 106, 0, 0.75);
+}
+
+h2 {
+  margin-bottom: 24px;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+h3 {
+  color: var(--navy);
+  font-size: 1.35rem;
+}
+
 /* ===== 共通パーツ ===== */
 .section {
   padding: 72px 20px;
@@ -61,37 +96,10 @@ a {
   text-transform: uppercase;
 }
 
-h1,
-h2,
-h3,
-p {
-  overflow-wrap: anywhere;
-}
-
-h1,
-h2,
-h3 {
-  margin-top: 0;
-  line-height: 1.15;
-}
-
-h1 {
-  margin-bottom: 14px;
-  color: var(--white);
-  font-size: clamp(2.2rem, 6vw, 5rem);
-  font-weight: 950;
-  text-shadow: 0 4px 0 rgba(255, 106, 0, 0.75);
-}
-
-h2 {
-  margin-bottom: 24px;
-  color: var(--navy);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-}
-
-h3 {
-  color: var(--navy);
-  font-size: 1.4rem;
+.lead {
+  max-width: 920px;
+  margin: 0 0 28px;
+  font-size: 1.06rem;
 }
 
 .button {
@@ -131,11 +139,6 @@ h3 {
   background: var(--navy);
 }
 
-.button--line {
-  color: #05240f;
-  background: #43d665;
-}
-
 .button--regulation {
   color: var(--navy-deep);
   border-color: rgba(255, 255, 255, 0.82);
@@ -150,18 +153,17 @@ h3 {
 /* ===== ヒーロー ===== */
 .hero {
   display: grid;
-  grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1fr);
-  gap: 0;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1fr);
   min-height: 100svh;
   background:
-    radial-gradient(circle at 25% 15%, rgba(255, 106, 0, 0.72), transparent 28%),
-    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 48%, #0f2b76 100%);
+    radial-gradient(circle at 20% 15%, rgba(255, 106, 0, 0.76), transparent 28%),
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #0f2b76 100%);
 }
 
 .hero__poster {
   position: relative;
   display: grid;
-  min-height: 520px;
+  min-height: 560px;
   place-items: center;
   overflow: hidden;
   background:
@@ -185,7 +187,7 @@ h3 {
   border-radius: 4px;
   padding: 4px 8px;
   color: var(--white);
-  background: rgba(2, 8, 23, 0.48);
+  background: rgba(2, 8, 23, 0.5);
   font-size: 0.86rem;
   font-weight: 900;
   line-height: 1;
@@ -225,10 +227,10 @@ h3 {
   text-transform: uppercase;
 }
 
-.catchcopy {
+.hero-subtitle {
   margin: 0 0 26px;
   color: var(--white);
-  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-size: clamp(1.12rem, 2.4vw, 1.55rem);
   font-weight: 900;
 }
 
@@ -253,9 +255,11 @@ h3 {
 
 .hero__facts span,
 .deadline-box span,
-.entry-panel span,
 .info-card span,
-.rule-card span {
+.rule-card span,
+.entry-panel span,
+.access-grid span,
+.link-grid span {
   display: block;
   color: var(--muted);
   font-size: 0.82rem;
@@ -278,14 +282,7 @@ h3 {
 }
 
 .deadline-box strong {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-}
-
-.deadline-box small {
-  display: block;
-  margin-top: 4px;
-  color: #fff8ed;
-  font-weight: 800;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
 }
 
 .button-row {
@@ -304,29 +301,33 @@ h3 {
   max-width: 720px;
 }
 
-/* ===== 概要カード ===== */
-.overview {
+/* ===== 概要 ===== */
+.overview,
+.schedule,
+.venue,
+.links {
   background: var(--white);
 }
 
-.overview p {
-  max-width: 860px;
-  margin-bottom: 28px;
-  font-size: 1.05rem;
-}
-
-.info-grid,
-.rule-cards {
+.info-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
+}
+
+.info-grid--wide {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .info-card,
 .rule-card,
 .venue-card,
 .notice-box,
-.entry-panel {
+.entry-panel,
+.bracket-card,
+.access-grid article,
+.notice-grid article,
+.link-grid a {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -340,7 +341,18 @@ h3 {
 .info-card strong {
   display: block;
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.info-card--one-line strong {
+  white-space: nowrap;
+  font-size: clamp(0.86rem, 1.5vw, 1rem);
+}
+
+.info-card--small strong {
+  font-size: 0.96rem;
+  line-height: 1.35;
 }
 
 /* ===== トーナメント ===== */
@@ -357,7 +369,10 @@ h3 {
   color: var(--white);
 }
 
-.tournament-grid {
+.tournament-grid,
+.bracket-grid,
+.split-content,
+.notice-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
@@ -429,41 +444,141 @@ h3 {
   text-align: right;
 }
 
+.alert-panel {
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: rgba(2, 8, 23, 0.42);
+}
+
+.alert-panel h3 {
+  color: var(--white);
+}
+
+/* ===== トーナメント表 ===== */
+.bracket {
+  background: #eef2fb;
+}
+
+.bracket-card {
+  min-height: 210px;
+  border: 2px dashed rgba(7, 20, 63, 0.32);
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 106, 0, 0.1), transparent),
+    var(--white);
+}
+
+.bracket-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--orange-dark);
+  font-size: 0.92rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.bracket-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+.bracket-card p {
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+.bracket-placeholder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  padding: 12px;
+  background: rgba(7, 20, 63, 0.06);
+}
+
+.bracket-placeholder i {
+  display: block;
+  min-height: 48px;
+  border: 1px solid rgba(7, 20, 63, 0.16);
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: inset 4px 0 0 rgba(255, 106, 0, 0.52);
+}
+
 /* ===== ルール ===== */
-.rules {
+.rules,
+.details,
+.conduct,
+.caution {
   background: #eef2fb;
 }
 
 .rule-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
   margin-bottom: 28px;
 }
 
 .rule-card {
-  min-height: 128px;
+  min-height: 138px;
   padding: 18px;
   border-top: 5px solid var(--orange);
   background: var(--white);
+}
+
+.rule-card span {
+  color: #58617a;
 }
 
 .rule-card strong {
   display: block;
   margin-top: 10px;
   color: var(--navy);
-  font-size: 1.22rem;
+  font-size: 1.16rem;
   line-height: 1.35;
 }
 
-.split-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.split-content > div {
+.split-content > div,
+.notice-grid article {
   border-radius: var(--radius);
   padding: 24px;
   background: var(--white);
   box-shadow: 0 8px 28px rgba(7, 20, 63, 0.1);
+}
+
+.progress-list {
+  display: grid;
+  gap: 12px;
+}
+
+.progress-list article {
+  border-left: 5px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: #f6f7fb;
+}
+
+.progress-list strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.progress-list p,
+.progress-note {
+  margin: 8px 0 0;
+  font-weight: 700;
+}
+
+.progress-note {
+  color: #58617a;
 }
 
 .check-list {
@@ -475,7 +590,7 @@ h3 {
 .check-list li {
   position: relative;
   padding: 10px 0 10px 28px;
-  border-top: 1px solid #dde4f4;
+  border-top: 1px solid var(--line);
   font-weight: 700;
 }
 
@@ -487,39 +602,149 @@ h3 {
   font-weight: 950;
 }
 
-/* ===== タイムテーブル ===== */
-.schedule {
-  background: var(--white);
+.check-list--light li {
+  border-top-color: rgba(255, 255, 255, 0.18);
 }
 
-.timeline {
+/* ===== タイムテーブル ===== */
+.schedule-list {
   display: grid;
   gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
-.timeline li {
+.schedule-item {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  align-items: center;
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
   border-left: 6px solid var(--orange);
   border-radius: var(--radius);
   padding: 18px 20px;
-  background: #f2f5fb;
+  background: var(--white);
+  box-shadow: 0 8px 28px rgba(7, 20, 63, 0.1);
 }
 
-.timeline time {
-  color: var(--navy);
+.schedule-item time {
+  color: var(--orange-dark);
+  font-size: 1.05rem;
   font-weight: 950;
 }
 
-.timeline span {
+.schedule-item p {
+  margin: 0;
+  color: var(--navy);
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+/* ===== 詳細ルール ===== */
+.accordion-list {
+  display: grid;
+  gap: 14px;
+}
+
+.accordion-list details {
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 8px 28px rgba(7, 20, 63, 0.1);
+}
+
+.accordion-list summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  color: var(--navy);
+  font-size: 1.08rem;
+  font-weight: 950;
+}
+
+.details-body {
+  border-top: 1px solid var(--line);
+  padding: 0 22px 18px;
+}
+
+/* ===== 会場・アクセス ===== */
+.venue-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(255, 106, 0, 0.92), rgba(255, 106, 0, 0.2)),
+    var(--navy);
+}
+
+.venue-card h3 {
+  margin-bottom: 6px;
+  color: var(--white);
+}
+
+.venue-card p {
+  margin: 0;
+}
+
+.venue-card span {
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-weight: 900;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.access-grid article {
+  padding: 18px;
+  background: var(--white);
+}
+
+.access-grid span,
+.link-grid span {
+  color: #58617a;
+}
+
+.access-grid strong,
+.link-grid strong {
+  display: block;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.parking-note {
+  border-left: 5px solid var(--orange);
+  margin: 18px 0 0;
+  padding-left: 14px;
   font-weight: 800;
 }
 
-/* ===== 申込方法 ===== */
+.map-card {
+  margin-top: 18px;
+  border-radius: var(--radius);
+  padding: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #dfe6f2;
+}
+
+.map-card .button {
+  margin-top: 12px;
+}
+
+/* ===== 申込・リンク ===== */
 .entry {
   color: var(--white);
   background: linear-gradient(135deg, var(--orange), #ff3b00 38%, var(--navy) 38%, var(--navy-deep));
@@ -558,7 +783,7 @@ h3 {
 .entry-panel strong {
   display: block;
   margin: 4px 0 18px;
-  font-size: 1.45rem;
+  font-size: 1.38rem;
   line-height: 1.35;
 }
 
@@ -567,65 +792,46 @@ h3 {
   gap: 12px;
 }
 
-/* ===== 会場・注意事項・フッター ===== */
-.venue {
+.button--entry-main {
+  min-height: 64px;
+  font-size: 1.18rem;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.link-grid a {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  border-left: 6px solid var(--orange);
+  border: 1px solid var(--line);
+  border-left-width: 6px;
+  padding: 20px;
   background: var(--white);
+  text-decoration: none;
 }
 
-.venue-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 24px;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, rgba(255, 106, 0, 0.92), rgba(255, 106, 0, 0.2)),
-    var(--navy);
+.link-grid a:hover,
+.link-grid a:focus-visible {
+  outline: 3px solid rgba(255, 106, 0, 0.32);
 }
 
-.venue-card h3 {
-  margin-bottom: 6px;
-  color: var(--white);
+.link-grid strong {
+  word-break: break-all;
 }
 
-.venue-card p {
-  margin: 0;
-}
-
-.venue-card span {
-  flex: 0 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.36);
-  border-radius: var(--radius);
-  padding: 8px 12px;
-  font-weight: 900;
-}
-
-.map-card {
-  margin-top: 18px;
-  border-radius: var(--radius);
-  padding: 14px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-}
-
-.map-card iframe {
+.link-grid small {
   display: block;
-  width: 100%;
-  min-height: 360px;
-  border: 0;
-  border-radius: var(--radius);
-  background: #dfe6f2;
+  margin-top: 8px;
+  color: #58617a;
+  font-weight: 800;
 }
 
-.map-card .button {
-  margin-top: 12px;
-}
-
-.caution {
-  background: #eef2fb;
-}
-
+/* ===== 注意事項・フッター ===== */
 .notice-box {
   border: 2px solid var(--orange);
   padding: 24px;
@@ -693,9 +899,14 @@ h3 {
 
   .hero__facts,
   .info-grid,
+  .info-grid--wide,
   .rule-cards,
   .tournament-grid,
+  .bracket-grid,
   .split-content,
+  .notice-grid,
+  .access-grid,
+  .link-grid,
   .entry__inner {
     grid-template-columns: 1fr;
   }
@@ -706,6 +917,10 @@ h3 {
 
   .entry-panel {
     width: 100%;
+  }
+
+  .info-card--one-line strong {
+    white-space: normal;
   }
 }
 
@@ -719,25 +934,22 @@ h3 {
   }
 
   h1 {
-    font-size: 2.35rem;
+    font-size: 2.2rem;
   }
 
   .button-row,
   .button-stack {
-    grid-template-columns: 1fr;
-  }
-
-  .button-row {
     display: grid;
+    grid-template-columns: 1fr;
   }
 
   .button {
     width: 100%;
   }
 
-  .timeline li {
+  .schedule-item {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 4px;
   }
 
   .venue-card {
@@ -764,11 +976,13 @@ h3 {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.95rem;
   }
 
   .tournament-card,
+  .bracket-card,
   .split-content > div,
+  .notice-grid article,
   .entry-panel,
   .notice-box,
   .venue-card {
