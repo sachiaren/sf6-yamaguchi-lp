@@ -8,7 +8,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 OUTPUT = Path("regulation_latest.pdf")
@@ -209,7 +209,6 @@ story += [
             "グランドファイナルリセット（発生時のみ）",
         ]
     ),
-    PageBreak(),
     h("5. タイムテーブル"),
     info_table(
         [
@@ -261,7 +260,6 @@ story += [
             "トラブル後も続行した場合は、原則その結果を有効とします。",
         ]
     ),
-    PageBreak(),
     h("9. アクセス・駐車場"),
     info_table(
         [
